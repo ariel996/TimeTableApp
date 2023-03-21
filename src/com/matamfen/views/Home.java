@@ -22,21 +22,7 @@ public class Home extends javax.swing.JFrame {
     }
     
     public Home(String userSes) {
-        logoutBtn.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                int a = JOptionPane.showConfirmDialog(logoutBtn, "Are you sure ?");
-                if (a == JOptionPane.YES_OPTION) {
-                    dispose();
-                    Login login = new Login();
-                    login.setTitle("User login");
-                    login.setVisible(true);
-                }
-                dispose();
-                Login login = new Login();
-                login.setTitle("User login");
-                login.setVisible(true);
-            }
-        });
+        
     }
 
     /**
@@ -62,7 +48,6 @@ public class Home extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(196, 208, 219));
 
@@ -156,7 +141,17 @@ public class Home extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void logoutBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutBtnActionPerformed
-        // TODO add your handling code here:
+       int a = JOptionPane.showConfirmDialog(logoutBtn, "Are you sure ?");
+                if (a == JOptionPane.YES_OPTION) {
+                    dispose();
+                    Login login = new Login();
+                    login.setTitle("User login");
+                    login.setVisible(true);
+                }
+                dispose();
+                Login login = new Login();
+                login.setTitle("User login");
+                login.setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     /**

@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
         String email = emailTextfield.getText();
         String password = passwordField.getText();
         try {
-            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "arielnana020596");
+            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC", "root", "arielnana020596");
             PreparedStatement st = (PreparedStatement) connection.prepareStatement("SELECT email, password FROM users WHERE email=? AND password=?");
             st.setString(1, email);
             st.setString(2, password);
@@ -113,7 +113,7 @@ public class Login extends javax.swing.JFrame {
                 Home home = new Home(email);
                 home.setTitle("Welcome");
                 home.setVisible(true);
-                JOptionPane.showMessageDialog(loginBtn, "You have successfully logged in");
+                //JOptionPane.showMessageDialog(loginBtn, "You have successfully logged in");
             } else {
                 JOptionPane.showMessageDialog(loginBtn, "Wrong email or password");
             }
