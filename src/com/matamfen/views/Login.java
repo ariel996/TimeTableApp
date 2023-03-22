@@ -103,7 +103,7 @@ public class Login extends javax.swing.JFrame {
         String email = emailTextfield.getText();
         String password = passwordField.getText();
         try {
-            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb?serverTimezone=UTC", "root", "arielnana020596");
+            Connection connection = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", "root", "arielnana020596");
             PreparedStatement st = (PreparedStatement) connection.prepareStatement("SELECT email, password FROM users WHERE email=? AND password=?");
             st.setString(1, email);
             st.setString(2, password);

@@ -22,7 +22,7 @@ public class Home extends javax.swing.JFrame {
     }
     
     public Home(String userSes) {
-        
+        userSessionLabel.setText(userSes);
     }
 
     /**
@@ -42,6 +42,8 @@ public class Home extends javax.swing.JFrame {
         timesBtn = new javax.swing.JButton();
         settingsBtn = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
+        welcomeLabel = new javax.swing.JLabel();
+        userSessionLabel = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -108,6 +110,10 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(121, Short.MAX_VALUE))
         );
 
+        welcomeLabel.setText("WELCOME");
+
+        userSessionLabel.setText("jLabel1");
+
         jMenu1.setText("File");
 
         jMenuItem1.setText("Logout");
@@ -128,11 +134,21 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(140, 140, 140)
+                .addComponent(welcomeLabel)
+                .addGap(52, 52, 52)
+                .addComponent(userSessionLabel)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(welcomeLabel)
+                    .addComponent(userSessionLabel))
+                .addGap(12, 12, 12)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -148,10 +164,10 @@ public class Home extends javax.swing.JFrame {
                     login.setTitle("User login");
                     login.setVisible(true);
                 }
-                dispose();
+                /*dispose();
                 Login login = new Login();
                 login.setTitle("User login");
-                login.setVisible(true);
+                login.setVisible(true);*/
     }//GEN-LAST:event_logoutBtnActionPerformed
 
     /**
@@ -201,6 +217,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton settingsBtn;
     private javax.swing.JButton teachersBtn;
     private javax.swing.JButton timesBtn;
+    private javax.swing.JLabel userSessionLabel;
     private javax.swing.JButton usersBtn;
+    private javax.swing.JLabel welcomeLabel;
     // End of variables declaration//GEN-END:variables
 }
